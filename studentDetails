@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("sharkpattern.png");
+        }
+        .hide {
+            display: none;
+        }
+
+        #student:hover .hide {
+            display: block;
+        }
+        h1{
+            text-align: center;
+            font-size: 500%;
+            color: white;
+            text-shadow: 4px 0 0 rgb(0, 0, 0), -4px 0 0 rgb(0, 0, 0), 0 4px 0 rgb(0, 0, 0), 0 -4px 0 rgb(0, 0, 0),
+           2px 2px rgb(0, 0, 0), -2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0);
+
+        }
+        h2{
+            text-align: center;
+            color: white;
+        }
+        .sophie{
+            float: left;
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .royal{
+            float: right;
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .kon{
+            float: left;
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .kaona{
+            float: right;
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        nav{
+            float: right;
+        }
+        .logo{
+            width: 150px;
+            height: 150px;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        #student{
+            padding: 50px;
+        }
+        .studentContainer{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .topRow {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .bottomRow{
+            clear: both;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        #name{
+            font-size: 25px;
+            padding: 10px;
+        }
+        
+        
+
+        
+
+    </style>
+</head>
+<body>
+    <nav>nav bar here</nav>
+    <div><img src="logo.png" alt="logo" class="logo"></div>
+    <h1>Student Details</h1>
+    <h2>About us (hover over the image)</h2>
+    <div class="studentContainer">
+        <div class="topRow">
+            <div class="sophie" id="student"><img src="simba1.png" alt="simba">
+                <div class="hide" id="name"><strong>Sophie</strong></div>
+                <div class="hide"><strong>Student 3</strong></div>
+                <div class="hide"><strong>Favourite travel destination:</strong> South Korea</div>
+
+            </div>
+            <div class="royal" id="student"><img src="marty.png" alt="marty">
+                <div class="hide" id="name"><strong>Royal</strong></div>
+                <div class="hide"><strong>Student 1</strong></div>
+                <div class="hide"><strong>Favourite travel destination:</strong> The Gods</div>
+
+            </div>
+        </div>
+        <div class="bottomRow">
+            <div class="kon" id="student"><img src="curiousgeorge.png" alt="george">
+                <div class="hide" id="name"><strong>Konrad</strong></div>
+                <div class="hide"><strong>Student 4</strong></div>
+                <div class="hide"><strong>Favourite travel destination:</strong> The Co-op</div>
+
+            </div>
+            <div class="kaona" id="student"><img src="nemo.png" alt="nemo">
+                <div class="hide" id="name"><strong>Kaona</strong></div>
+                <div class="hide"><strong>Student 2</strong></div>
+                <div class="hide"><strong>Favourite travel destination:</strong> Anywhere in Europe</div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
