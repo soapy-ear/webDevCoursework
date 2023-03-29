@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sharky Travels Quiz</title>
+    <style>
+       
+        body{
+            background-image: url("sharkpattern.png");
+        }
+        h1{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            text-align: center;
+            font-size: 80px;
+            margin: 40px, 20px, 80px, 20px;
+            color: white;
+            text-shadow: 4px 0 0 rgb(0, 0, 0), -4px 0 0 rgb(0, 0, 0), 0 4px 0 rgb(0, 0, 0), 0 -4px 0 rgb(0, 0, 0),
+           2px 2px rgb(0, 0, 0), -2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0);
+        }
+        .container{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 70vh;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 70px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px 2px;
+        }
+       .btn-grid{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+        margin: 20px 0;
+       }
+       .btn{
+        background-color: rgb(127, 212, 255);
+        border: 1px solid rgb(79, 196, 255);
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: rgb(0, 0, 0);
+        outline: none;
+       }
+       .btn:hover{
+        border-color: black;
+       }
+       .btn.correct{
+        background-color: rgb(47, 234, 47);
+       }
+       .btn.incorrect{
+        background-color: red;
+       }
+       .start-btn, .next-btn{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 20px;
+       }
+       .controls{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+       }
+       .hide{
+        display:none;
+       }
+       nav{
+        float: right;
+       }
+       .image{
+        width: 300px;
+        height: 300px;
+       }
+       #score{
+        padding: 20px;
+        margin-top: 20px;
+        text-align: center;
+       }
+       p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        color: white;
+        text-shadow: 4px 0 0 rgb(0, 0, 0), -4px 0 0 rgb(0, 0, 0), 0 4px 0 rgb(0, 0, 0), 0 -4px 0 rgb(0, 0, 0),
+           2px 2px rgb(0, 0, 0), -2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0);
+       }
+       .resultpic{
+        width: 300px;
+        height:300px;
+       }
+       #next-btn{
+        margin-top: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav>nav bar here</nav>
+<img src="logo.png" alt="logo" width="150" height="150">
+<div class="title"><h1>Sharky Travels Quiz</h1></div>
+<div class="container">
+    <span id="scoreContainer" class="hide">
+        <img src="happyshark.jpeg" alt="result" class="resultpic">
+    </span>
+    <div id="questionContainer" class="hide">
+        <div id="timer">
+            <div id="counter">0</div>
+            <div id="timeGauge1"></div>
+            <div id="timeGauge2"></div>
+        </div>
+        <div id="image"><img src="img.png"></div>
+        <div id="question">Question</div>
+        <div id="answerButtons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+</div>
+<p id="score" class="hide"><strong>Score:</strong> <span id="score-value">0</span></p>
+
+<script>
+    let score = 0
+    const startButton = document.getElementById('start-btn')
+    const nextButton = document.getElementById('next-btn')
+    let scoreCounterElement = document.getElementById('score')
+    let scoreCounter = document.getElementById('score-value')
+    const questionContainerElement = document.getElementById('questionContainer')
+    let shuffledQuestions, currentQuestionIndex
+    const questionElement = document.getElementById('question')
+    const answerButtonsElement = document.getElementById('answerButtons')
+    const image = document.getElementById('image')
+    const counter = document.getElementById('counter')
+    const timeGauge = document.getElementById('timeGauge2')
+    const scoreContainer = document.getElementById('scoreContainer')
+    const questionTime = 10
+    const gaugeWidth = 150
+    let count = 0
+    const gaugeProgressUnit = gaugeWidth/questionTime
+    let timer
+    
+    function scoreRender(){
+        scoreContainer.classList.remove('hide')
+        questionContainerElement.classList.add('hide')
+
+    }
+
+    function counterRender(){
+        if(count <= questionTime){
+            counter.innerHTML = count
+            timeGauge.style.width = gaugeProgressUnit * count + "px"
+            count++
+        }else{
+            count = 0
+            }
+        }
+    
+
+
+    startButton.addEventListener('click', startQuiz)
+    nextButton.addEventListener('click', ()=> {
+        currentQuestionIndex++
+        setNextQuestion()
+    })
+
+    function startQuiz(){
+        scoreContainer.classList.add('hide')
+        startButton.classList.add('hide')
+        score = 0
+        shuffledQuestions = questions.sort(()=> Math.random() - .5)
+        currentQuestionIndex = 0
+        questionContainerElement.classList.remove('hide')
+        scoreCounterElement.classList.remove('hide')
+        setNextQuestion()
+        timer = setInterval(counterRender, 1000)
+    }
+    
+    function setNextQuestion(){
+        count = 0
+        resetState()
+        showQuestion(shuffledQuestions[currentQuestionIndex])
+    }
+
+    function showQuestion(question){
+        image.innerHTML = "<img src=" + question.imgSrc + " alt='sharkyquiz' class='image'>"
+        questionElement.innerText = question.question
+        question.answers.forEach(answer => {
+            const button = document.createElement('button')
+            button.innerText = answer.text
+            button.classList.add('btn')
+            if (answer.correct){
+                button.dataset.correct = answer.correct
+            }
+            button.addEventListener('click', selectAnswer)
+            answerButtonsElement.appendChild(button)
+        })
+    }
+
+    function resetState(){
+        nextButton.classList.add('hide')
+        while (answerButtonsElement.firstChild){
+            answerButtonsElement.removeChild
+            (answerButtonsElement.firstChild)
+        }
+    }
+
+    function selectAnswer(e){
+        const selectedButton = e.target
+        const correct = selectedButton.dataset.correct
+        Array.from(answerButtonsElement.children).forEach(button => {
+            setStatusClass(button, button.dataset.correct)
+        })
+        if(shuffledQuestions.length > currentQuestionIndex + 1){
+            nextButton.classList.remove('hide')
+        } else{
+            scoreRender()
+            startButton.innerText = 'Restart'
+            startButton.classList.remove('hide')
+            score.innerText = `Score: ${score} out of ${shuffledQuestions.length}`;
+            scoreValue.innerText = score;
+
+        }
+        if (correct) {
+    score++;
+    scoreCounter.innerText = score * 10;
+}
+        
+        nextButton.classList.remove('hide')
+    }
+
+    function setStatusClass(element, correct){
+        clearStatusClass(element)
+        if (correct) {
+            element.classList.add('correct')
+        } else{
+            element.classList.add('incorrect')
+        }
+    }
+    function clearStatusClass(element){
+        element.classList.remove('correct')
+        element.classList.remove('incorrect')
+    }
+
+    const questions = [
+        {
+            imgSrc: "baht.jpeg",
+            question: "Which country uses the currency 'Baht'?",
+            answers: [
+                {text: "Thailand", correct: true},
+                {text: "Vietnam", correct: false},
+                {text: "Malaysia", correct: false},
+                {text: "Nepal", correct: false}
+            ]
+        },
+        {
+            imgSrc: "africa.jpeg",
+            question: "What is the largest country in Africa?",
+            answers: [
+                {text: "Kenya", correct: false},
+                {text: "Algeria", correct: true},
+                {text: "Chad", correct: false},
+                {text: "Libya", correct: false}
+            ]
+        },
+        {
+            imgSrc: "australia.jpeg",
+            question: "What is the capital of Australia?",
+            answers: [
+                {text: "Sydney", correct: false},
+                {text: "Melbourne", correct: false},
+                {text: "Canberra", correct: true},
+                {text: "Brisbane", correct: false}
+            ]
+        },
+        {
+            imgSrc: "coastline.jpeg",
+            question: "Which country has the longest coastline in the world?",
+            answers: [
+                {text: "Canada", correct: true},
+                {text: "Russia", correct: false},
+                {text: "Australia", correct: false},
+                {text: "Japan", correct: false}
+            ]
+        },
+        {
+            imgSrc: "europe.png",
+            question: "Which European capital city was built on 14 islands?",
+            answers: [
+                {text: "Copenhagen", correct: false},
+                {text: "Oslo", correct: false},
+                {text: "Amsterdam", correct: false},
+                {text: "Stockholm", correct: true}
+            ]
+        },
+        {
+            imgSrc: "southamerica.jpeg",
+            question: "There are two countries in South America that are landlocked. One is Bolivia, which is the other?",
+            answers: [
+                {text: "Peru", correct: false},
+                {text: "Argentina", correct: false},
+                {text: "Suriname", correct: false},
+                {text: "Paraguay", correct: true}
+            ]
+        },
+        {
+            imgSrc: "jeju.jpeg",
+            question: "What is the name of South Korea's biggest island?",
+            answers: [
+                {text: "Busan", correct: false},
+                {text: "Jeju", correct: true},
+                {text: "Daejon", correct: false},
+                {text: "Seoul", correct: false}
+            ]
+        },
+        {
+            imgSrc: "iceland.jpeg",
+            question: "What is the currency of Iceland?",
+            answers: [
+                {text: "Euro", correct: false},
+                {text: "Ruble", correct: false},
+                {text: "Krona", correct: true},
+                {text: "Franc", correct: false}
+            ]
+        },
+        {
+            imgSrc: "compass.jpeg",
+            question: "What is the most northern capital city in the world?",
+            answers: [
+                {text: "Reykjavik", correct: true},
+                {text: "Helsinki", correct: false},
+                {text: "Oslo", correct: false},
+                {text: "Stockholm", correct: false}
+            ]
+        },
+        {
+            imgSrc: "zanzibar.jpeg",
+            question: "Zanzibar is an island off which African Country?",
+            answers: [
+                {text: "Kenya", correct: false},
+                {text: "Mozambique", correct: false},
+                {text: "Tanzania", correct: true},
+                {text: "South Africa", correct: false }
+            ]
+        }
+    ]
+
+</script>
+</body>
+</html>

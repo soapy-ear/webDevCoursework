@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Extra Content Page</title>
+        <style>
+          h1 {
+  position: relative;
+  text-align: center;
+  font-size: 90px;
+  font-family: 'Delicious Handrawn';
+}
+h1::before,
+h1::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-image: url('flag.jpeg');
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+h1::before {
+  left: -220px;
+}
+h1::after {
+  right: -220px;
+}
+.seoul {
+  position: relative;
+  text-align: center;
+  font-size: 120px;
+  font-family: Lobster;
+}
+.seoul::before,
+.seoul::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-image: url('flag.jpeg');
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.seoul::before {
+  left: -220px;
+}
+.seoul::after {
+  right: -220px;
+}
+h2 {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Delicious Handrawn';
+}
+h2::before,
+h2::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 75px;
+  background-image: url('flag.jpeg');
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+h2::before {
+  left: -170px;
+}
+h2::after {
+  right: -170px;
+}
+
+        </style>
+    </head>
+    <body>
+        <nav>nav bar here</nav>
+        <img src="logohere" alt="logo">
+    
+        <img src="flag.jpeg" alt="flag" class="flag1">
+        <h1>City Spotlight:</h1>
+        <img src="flag.jpeg" alt="flag" class="flag2">
+        <h1 class="seoul">Seoul</h1>
+        <h2>The Seasons of Seoul</h2>
+    
+        <p>Seoul is a great city to travel to all year round, here are the highlights of each season</p>
+        <p>Click the season name to learn the Korean translation!</p>
+
+        <div class="springContainer">
+            <h3><span class="season-name">Spring</span></h3>
+            <img src="pichere.jpeg" alt="SpringPic">
+            <p>lots of text, maybe a pic, when pic hovered over, bring up info</p>
+        </div>
+        <div class="summerContainer">
+            <h3><span class="season-name">Summer</span></h3>
+            <img src="pichere.jpeg" alt="SummerPic">
+            <p>lots of text, maybe a pic, when pic hovered over, bring up info</p>
+        </div>
+        <div class="autumnContainer">
+            <h3><span class="season-name">Autumn</span></h3>
+            <img src="pichere.jpeg" alt="AutumnPic">
+            <p>lots of text, maybe a pic, when pic hovered over, bring up info</p>
+        </div>
+        <div class="winterContainer">
+            <h3><span class="season-name">Winter</span></h3>
+            <img src="pichere.jpeg" alt="WinterPic">
+            <p>lots of text, maybe a pic, when pic hovered over, bring up info</p>
+        </div>
+
+        <script>
+            var seasonName = document.querySelectorAll('.season-name');
+
+            for (var i = 0; i < seasonName.length; i++) {
+                seasonName[i].addEventListener('click', function() {
+                    var koreanSeasonName = '';
+                    switch (this.textContent.toLowerCase()) {
+                        case 'spring':
+                            koreanSeasonName = '봄 (bom)';
+                            break;
+                        case 'summer':
+                            koreanSeasonName = '여름 (yeoreum)';
+                            break;
+                        case 'autumn':
+                            koreanSeasonName = '가을 (gaeul)';
+                            break;
+                        case 'winter':
+                            koreanSeasonName = '겨울 (gyeoul)';
+                            break;
+                    }
+                    var seasonNameKorean = this.parentNode.querySelector('.season-name-korean');
+                    if (seasonNameKorean) {
+                        seasonNameKorean.remove();
+                    } else {
+                        seasonNameKorean = document.createElement('span');
+                        seasonNameKorean.classList.add('season-name-korean');
+                        seasonNameKorean.textContent = koreanSeasonName;
+                        this.parentNode.appendChild(seasonNameKorean);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

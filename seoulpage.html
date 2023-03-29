@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Extra Content Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+            body{
+                background-image: url(korea.jpg);
+                font-family: 'Quicksand'
+            }
+            h1{
+                text-align: center;
+                font-size: 90px;
+                font-family: 'Delicious Handrawn';
+            }
+            .seoul{
+                font-size: 120px;
+                text-align: center;
+                font-family: Lobster;
+            }
+            h2{
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Delicious Handrawn';
+            }
+            nav{
+                float: right;
+            }
+            .logo{
+                width: 100px;
+                height: 100px;
+            }
+            .seasonName{
+                background-color: pink;
+                padding: 10px;
+                top: 0;
+                width: 100%;
+                font-weight: 700;
+            }
+            .keyword {
+                background-color: pink;
+            }
+            .springPic, .summerPic, .autumnPic, .winterPic{
+                width: 425px;
+                height: 225px;
+                margin-bottom: 10px;
+            }
+            .leftPic{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+            }
+            .rightPic{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+                width: 50%;
+            }
+            .springContainer, .summerContainer, .autumnContainer, .winterContainer{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+                width: fit-content;
+                height: fit-content;
+                position: relative;
+            }
+            figure {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .jump{
+                width: 50px;
+                height: 50px;
+            }
+            h4{
+                font-size: 20px;
+                padding: 20px;
+            }
+            p{
+                padding: 20px;
+            }
+            figcaption{
+                font-weight: bold;
+            }
+            .container{
+                background-color: white;
+                border-radius: 5px;
+                width: 1250px;
+                margin: auto;
+            }
+            .flag1{
+                width: 325px;
+                float: left;
+            }
+            .flag2{
+                width: 325px;
+                float: right;
+            }
+            .jumpContainer{
+                background-color: white;
+                width: 120px;
+                margin-left: 110px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>nav bar here</nav>
+        <img src="logo.png" alt="logo" class="logo">
+        <div class="container">
+        <h1>City Spotlight:</h1>
+        <h1 class="seoul"><img src="flag.jpeg" alt="flag" class="flag1">Seoul <img src="flag.jpeg" alt="flag" class="flag2"></h1>
+        <h2>The Seasons of Seoul</h2>
+        
+        <h4>Seoul is a great city to travel to all year round, no matter what time of year you go there is always something to do! Each season is very distinctive in South Korea. Here are some of the highlights for each season...</h4>
+        <p><i>Click the highlighted words to learn the Korean translation!</i></p>
+        
+        
+        <div class="springContainer">
+            <h3><span class="seasonName">Spring</span></h3>
+            <div class="leftPic">
+                <figure>
+                    <img src="spring1.jpeg" alt="CherryBlossom" class="springPic">
+                    <figcaption>View the <span class="keyword">cherry blossom</span><span class="keyword-korean"></span></figcaption>
+                    <p>The cherry blossoms in Seoul are a cherished cultural symbol and a must-see for anyone visiting the city during springtime. It truly is a magical time of year - the cherry blossoms transform the city into a sea of delicate pink and white flowers.</p>
+                </figure>
+               
+            </div>
+            <div class="rightPic">
+                <figure>
+                    <img src="lotteworld.jpeg" alt="lotteworld" class="springPic">
+                    <figcaption>Ride the rollercoasters at Lotte World Adventure <span class="keyword">amusement park</span><span class="keyword-korean"></span></figcaption>
+                    <p>Lotte World Adventure is located inside a huge shopping complex, Lotte World. It consists of a large indoor theme park with an outdoor "Magic Island". There are rides for everyone - from young children to thrillseekers. </p>
+                </figure>
+                
+            </div>
+        </div>
+        <div class="summerContainer">
+            <h3><span class="seasonName">Summer</span></h3>
+            <div class="leftPic">
+                <figure>
+                    <img src="hanriver.jpeg" alt="hanriver" class="summerPic">
+                    <figcaption>Enjoy a picnic by <span class="keyword">Han River</span><span class="keyword-korean"></span></figcaption>
+                    <p>Eat some traditional Korean picnic food such as gimbap by the Han River with friends. You can even order delivery to your picnic spot! Often there are live music performers and regular river boat rides.</p>
+                </figure>
+            </div>
+            <div class="rightPic">
+                <figure>
+                    <img src="waterfestival.jpeg" alt="waterfestival" class="summerPic">
+                    <figcaption>Keep cool at a water festival while listening to great <span class="keyword">music </span><span class="keyword-korean"></span></figcaption>
+                    <p>During the hot summer months there are many different water festivals with famous music artists performing. Take a water gun with you and prepared to get wet! It's just what you need to tackle the scorching, humid weather.</p>
+                </figure>
+            </div>
+        </div>
+        <div class="autumnContainer">
+            <h3><span class="seasonName">Autumn</span></h3>
+            <div class="leftPic">
+            <figure>
+                <img src="bike.jpeg" alt="bike" class="autumnPic">
+                <figcaption>Explore the city on a <span class="keyword">bike</span><span class="keyword-korean"></span></figcaption>
+                <p>ycling in Seoul is a great way to explore the city and take in the sights and sounds of your surroundings. It is a popular activity enjoyed by locals and visitors alike. With well-maintained bike paths and stunning scenery, Korea offers a unique biking experience.</p>
+            </figure>
+        </div>
+        <div class="rightPic">
+            <figure>
+                <img src="autumn.jpeg" alt="hike" class="autumnPic">
+                <figcaption>Enjoy the beautiful autumnal colours while <span class="keyword">hiking</span><span class="keyword-korean"></span></figcaption>
+                <p>Hiking in Seoul during the autumn months is a popular activity for locals and tourists alike. The crisp, cool air and vibrant fall foliage make for a stunning hiking experience. There are many different hiking trails with varying degrees of difficulty.</p>
+            </figure>
+        </div>
+        </div>
+        <div class="winterContainer">
+            <h3><span class="seasonName">Winter</span></h3>
+            <div class="leftPic">
+                <figure>
+                    <img src="christmasshopping.jpeg" alt="christmas" class="winterPic">
+                    <figcaption>See the pretty lights while <span class="keyword">Christmas shopping</span><span class="keyword-korean"></span></figcaption>
+                    <p>Seoul is filled with colorful decorations and holiday-themed events, making it the perfect place to get into the Christmas spirit. Many shops offer special Christmas discounts, making it a great time to grab a bargain.</p>
+                </figure>
+            </div>
+            <div class="rightPic">
+                <figure>
+                    <img src="galbitang.jpeg" alt="galbitang" class="winterPic">
+                    <figcaption>Warm up with a traditional galbitang soup in a <span class="keyword">restaurant</span><span class="keyword-korean"></span></figcaption>
+                    <p>Galbitang is a Korean soup made with beef short ribs. It is perfect to warm you up in the freezing weather. If beef isn't your thing, there are many other types of Korean soups such as rice cake soup, radish soup and chicken soup.</p>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="jumpContainer">
+        <a href="#top">
+            <img class="jump" src="/Users/sophieearish/Documents/HTML:CSS/coursework/page editor/jump.png" alt="jump">
+            <p class="jump-text">jump to top</p>
+        </a>
+    </div>
+        <footer>footer here</footer>
+     
+
+        <script>
+            var seasonName = document.querySelectorAll('.seasonName');
+
+            for (var i = 0; i < seasonName.length; i++) {
+                seasonName[i].addEventListener('click', function() {
+                    var koreanSeasonName = '';
+                    switch (this.textContent.toLowerCase()) {
+                        case 'spring':
+                            koreanSeasonName = ' 봄 (bom)';
+                            break;
+                        case 'summer':
+                            koreanSeasonName = ' 여름 (yeo-reum)';
+                            break;
+                        case 'autumn':
+                            koreanSeasonName = ' 가을 (gae-ul)';
+                            break;
+                        case 'winter':
+                            koreanSeasonName = ' 겨울 (gyeo-ul)';
+                            break;
+                    }
+                    var seasonNameKorean = this.parentNode.querySelector('.season-name-korean');
+                    if (seasonNameKorean) {
+                        seasonNameKorean.remove();
+                    } else {
+                        seasonNameKorean = document.createElement('span');
+                        seasonNameKorean.classList.add('season-name-korean');
+                        seasonNameKorean.textContent = koreanSeasonName;
+                        this.parentNode.appendChild(seasonNameKorean);
+                    }
+                });
+            }
+            var keyword = document.querySelectorAll('.keyword');
+
+            for (var i = 0; i < keyword.length; i++) {
+                keyword[i].addEventListener('click', function() {
+                    var koreanKeyword = '';
+                    switch (this.textContent.toLowerCase()) {
+                        case 'cherry blossom':
+                            koreanKeyword = ' 벚꽃 (beot-kkot)';
+                            break;
+                        case 'han river':
+                            koreanKeyword = ' 한강 (han-gang)';
+                            break;
+                        case 'amusement park':
+                            koreanKeyword = ' 놀이공원 (no-ri-gong-won)';
+                            break;
+                        case 'music ':
+                            koreanKeyword = '  음악 (eu-mak) ';
+                            break;
+                        case 'bike':
+                            koreanKeyword = ' 자전거 (ja-jeon-geo)';
+                            break;
+                        case 'christmas shopping':
+                            koreanKeyword = ' 크리스마스 쇼핑 (keu-ri-seu-ma-seu-syo-ping)';
+                            break;
+                        case 'restaurant':
+                            koreanKeyword = ' 식당 (shik-dang)';
+                            break;
+                        case 'hiking':
+                            koreanKeyword = ' 등산 (deun-san)';
+                            break;
+                    }
+                    var keywordKorean = this.parentNode.querySelector('.keyword-korean');
+                    if (keywordKorean) {
+                        keywordKorean.remove();
+                    } else {
+                        keywordKorean = document.createElement('span');
+                        keywordKorean.classList.add('keyword-korean');
+                        keywordKorean.textContent = koreanKeyword;
+                        this.parentNode.appendChild(keywordKorean);
+                        this.parentNode.insertBefore(keywordKorean, this.nextSibling);
+                        
+                    }
+                });
+            }       
+        </script>
+    </body>
+</html>
