@@ -1,6 +1,6 @@
 document.getElementById("mainMenu").
 	addEventListener("click", function() {
-		document.location.href="Home.html";
+		document.location.href="mainMenu.html";
 });
 
 document.getElementById("Content").
@@ -10,22 +10,22 @@ document.getElementById("Content").
 
 document.getElementById("Store").
 	addEventListener("click", function() {
-		document.location.href="";
+		document.location.href="Store.html";
 });
 
 document.getElementById("Form").
 	addEventListener("click", function() {
-		document.location.href="";
+		document.location.href="Form.html";
 });
 
 document.getElementById("Quiz").
 	addEventListener("click", function() {
-		document.location.href="";
+		document.location.href="Quiz.html";
 });
 
 document.getElementById("studentDetails").
 	addEventListener("click", function() {
-		document.location.href="";
+		document.location.href="studentDetails.html";
 });
 
 document.getElementById("Gallery").

@@ -9,19 +9,8 @@
 </head>
 
 <body>
-	<nav>
-		<ul>
-			<li class="horizontal" style="float:right"><a href="store.html">Store</a></li>
-			<li class="horizontal" style="float:right"><a href="form.html">Share your experience!</a></li>
-			<li class="horizontal" style="float:right"><a href="quiz.html">Quiz</a></li>
-			<li class="horizontal" style="float:right"><a href="studentdetails.html">Student Details</a></li>
-			<li class="horizontal" style="float:right"><a href="sitemap.html">Sitemap</a></li>
-			<li class="active horizontal" style="float:right"><a href="gallery.html">Gallery</a></li>
-		</ul>
-	</nav>
-  
 	<div class="gallery">
-		<h1>Image Gallery</h1><h1 style="font-size: 10px;">Courtesy of Getty Images</h1>
+		<h1>Image Gallery</h1><h1 style="font-size: 10px">Courtesy of Getty Images</h1>
 		<div id="box" class="images">
 			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1089901612304191498/960x0.png" alt="The famously colorful Bo Kaap neighborhood in Cape Town, South Africa." onclick="showImage('https://cdn.discordapp.com/attachments/1089901577751515186/1089901612304191498/960x0.png', 'Located in the heart of Cape Town, South Africa, the Bo Kaap neighborhood is a vibrant and colorful destination that is a must-see for anyone who appreciates rich culture and stunning backdrops. The neighborhood features charming houses painted in hues of pink, yellow, blue, and green that are sure to catch your eye and make for great photo opportunities. Explore the cobblestone streets and unique architecture dating back to the 18th century, while immersing yourself in the rich history and diverse cultural heritage of this fascinating neighborhood. Do not miss out on the chance to visit local museums and landmarks that showcase the captivating story of Bo Kaap.')">
 			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1089908531676848249/960x0.png" alt="Photographing Machu Picchu, Peru." onclick="showImage('https://cdn.discordapp.com/attachments/1089901577751515186/1089908531676848249/960x0.png', 'Nestled high in the Andes mountains of Peru, Machu Picchu is an awe-inspiring ancient Incan citadel that draws visitors from all over the world. The image captures a stunning view of the ruins, with terraces and structures perched on the steep mountainside overlooking the lush green valley below. The stone structures are a testament to the incredible engineering skills of the Incan people, and the site is surrounded by natural beauty that includes misty peaks and cloud forests. Visitors can explore the ruins and learn about the rich history and culture of the Incas, as well as marvel at the breathtaking views that surround them. Machu Picchu is truly a once-in-a-lifetime destination that should not be missed by any traveler seeking a unique and unforgettable experience.')">
@@ -34,8 +23,8 @@
 			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1089907254507090010/960x0.png" alt="In Kruger National Park, South Africa." onclick="showImage('https://cdn.discordapp.com/attachments/1089901577751515186/1089907254507090010/960x0.png', 'Kruger National Park, South Africa, is one of the worlds most famous safari destinations. The park is home to an incredible array of wildlife, including the Big Five game animals: lions, leopards, rhinoceroses, elephants, and Cape buffaloes. Visitors can embark on a game drive and witness these majestic creatures in their natural habitat. With its vast savannahs, dense forests, and winding rivers, Kruger National Park is a stunningly beautiful destination that offers unforgettable experiences for nature enthusiasts and wildlife lovers alike.')">
 			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1089911217310683146/960x0.png" alt="A view of Honolulu's Magic Island And Waikiki Beach." onclick="showImage('https://cdn.discordapp.com/attachments/1089901577751515186/1089911217310683146/960x0.png', 'Located in Honolulu, Hawaii, Magic Island and Waikiki Beach are two stunning coastal attractions that are not to be missed. Magic Island is a beautiful park area that features expansive lawns, walking paths, and a calm lagoon for swimming and water sports. Nearby, Waikiki Beach boasts crystal clear waters and pristine white sand beaches, perfect for sunbathing, surfing, and soaking up the tropical atmosphere. Together, Magic Island and Waikiki Beach offer visitors an unforgettable experience of Hawaiis natural beauty and vibrant culture.')">
 		</div>
-		<div class="mainImage">
-			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1089908369982230661/image.png" alt="Empty image" id="selectedImage">
+		<div id="box" class="mainImage">
+			<img src="https://cdn.discordapp.com/attachments/1089901577751515186/1090660157769400400/sharky.png" alt="Empty image" id="selectedImage">
 			<div class="imageDescription" id="imageDescription"></div>
 		</div>
     </div>
@@ -45,10 +34,10 @@
 		<button id="smallButton">Small</button>
 	</div>
     <div>
-		<button onclick="changeColorScheme('blue')">Blue</button>
-		<button onclick="changeColorScheme('green')">Green</button>
-		<button onclick="changeColorScheme('purple')">Purple</button>
-		<button onclick="changeColorScheme('random')">Random</button>
+		<button onclick="changeColor('blue')">Blue</button>
+		<button onclick="changeColor('green')">Green</button>
+		<button onclick="changeColor('purple')">Purple</button>
+		<button onclick="changeColor('random')">Random</button>
     </div>
 	<br><br><br><br>
 	<div class="pageEditorBanner"><a href="w19008958editor.html">Page Editor</a></div>

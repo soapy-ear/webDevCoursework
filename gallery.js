@@ -8,6 +8,7 @@ function showImage(imageSrc, description) {
 }
 
 // Font changing buttons //
+
 var imageDescription = document.getElementById("imageDescription");
 
 document.getElementById("bigButton").addEventListener("click", function() {
@@ -24,29 +25,27 @@ document.getElementById("smallButton").addEventListener("click", function() {
 
 // Colour changing buttons //
 
-function changeColorScheme(color) {
+const colors = ["red", "orange", "yellow", "indigo", "violet", "pink", "gray", "teal", "gold", "magenta"];
+
+function changeColor(color) {
 	const body = document.querySelector('body');
   
 	switch(color) {
 		case 'blue':
-			body.style.backgroundColor = '#0099cc';
-			body.style.color = '#fff';
+			body.style.backgroundColor = 'blue';
+			body.style.color = 'white';
 			break;
 		case 'green':
-			body.style.backgroundColor = '#66cc66';
-			body.style.color = '#000';
+			body.style.backgroundColor = 'green';
+			body.style.color = 'black';
 			break;
 		case 'purple':
-			body.style.backgroundColor = '#993399';
-			body.style.color = '#fff';
+			body.style.backgroundColor = 'purple';
+			body.style.color = 'white';
 			break;
 		case 'random':
-			const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-			body.style.backgroundColor = '#' + randomColor;
-			body.style.color = '#fff';
+			body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+			body.style.color = 'white';
 			break;
-		default:
-			body.style.backgroundColor = '#fff';
-			body.style.color = '#000';
 	}
 }

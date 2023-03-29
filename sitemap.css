@@ -1,40 +1,7 @@
-html {
-	height: 100%;
-	width: 100%;
-}
-
-/* NAVBAR CSS */
-/* ---------- */
-
-li.horizontal {
-    display: inline;
-}
-
-li.active {
-    background-color: #04AA6D;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-	position: fixed;
-	width: 100%;
-	top: 0;
-}
-
-li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-li a:hover {
-	background-color: #111;
+body {
+	background-image: url("https://cdn.discordapp.com/attachments/1089901577751515186/1090665194822303826/ao79glhjx4xugm86hbzp0ugiqxei.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 /* SITEMAP CSS */
@@ -42,13 +9,14 @@ li a:hover {
 
 svg {
 	display: block;
+	margin: auto;
 }
 
 g:hover polyline,
 g:hover line {
 	fill: none;
 	stroke-width: 2;
-	stroke: black;
+	stroke: red;
 }
 
 g:hover g text,
@@ -61,14 +29,8 @@ g:hover rect,
 g:focus polygon,
 g:focus rect {
 	fill: hsla(24, 20%, 50%,.3);
-	stroke: black;
+	stroke: red;
 	stroke-width: 2;
-}
-
-#box {
-	width: 50%;
-	margin: auto;
-	border: 2px solid black;
 }
 
 /* PAGE EDITOR CSS */
