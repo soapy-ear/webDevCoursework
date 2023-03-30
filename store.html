@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharky Shop</title>
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="css_style.css">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="horizontal" style="float:right"><a href="store.html">Store</a></li>
+            <li class="horizontal" style="float:right"><a href="form.html">Share your experience!</a></li>
+            <li class="horizontal" style="float:right"><a href="quiz.html">Quiz</a></li>
+            <li class="horizontal" style="float:right"><a href="studentdetails.html">Student Details</a></li>
+            <li class="horizontal" style="float:right"><a href="sitemap.html">Sitemap</a></li>
+            <li class="active horizontal" style="float:right"><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Sharky Travels</a>
+            <!--Cart icon-->
+            <i class="bx bx-shopping-bag" id="cart-icon"></i>
+            <!--Cart-->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <!--Content-->
+                <div class="cart-content">
+                    <div class="cart-box">
+                        <img src="suitcase.jpg" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-product-title">Tu Case</div>
+                            <div class="cart-price">£41.99</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <!--Remove cart-->
+                        <i class="bx bxs-trash-alt cart-remove" ></i>
+                    </div>
+                </div>
+                <!--Total-->
+                <div class="total">
+                    <div class="total-title">Total: </div>
+                    <div class="total-price>">£0</div>
+                </div>
+                <!--Buy button-->
+                <button type="button" class="btn-buy"><a href="checkout.html">Buy Now</button></a>
+                <!--Cart close-->
+                <i class="bx bx-x" id="close-cart"></i>
+            </div>
+        </div>
+    </header>
+    <!--Shop-->
+    <section class="shop container">
+        <h2 class="section-title">Shop Products</h2>
+        <!--Content-->
+        <div class="shop-content">
+            <div class="product-box">
+                <img src="suitcase.jpg" alt="" class="product-img">
+                <h2 class="product-title">Duong Case</h2>
+                <span class="price">£41.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="suitcase2.jpg" alt="" class="product-img">
+                <h2 class="product-title">Butterfly Vo Case</h2>
+                <span class="price">£44.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="suitcase3.jpg" alt="" class="product-img">
+                <h2 class="product-title">Pattern Rolling Case</h2>
+                <span class="price">£31.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="tshirt.jpg" alt="" class="product-img">
+                <h2 class="product-title">On The Stars Shirt</h2>
+                <span class="price">£15.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="tshirt2.jpg" alt="" class="product-img">
+                <h2 class="product-title">Travel Tshirt</h2>
+                <span class="price">£19.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="tshirt3.jpg" alt="" class="product-img">
+                <h2 class="product-title">On The Road Tshirt</h2>
+                <span class="price">£17.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="bottle.jpg" alt="" class="product-img">
+                <h2 class="product-title">Cindy Bottle</h2>
+                <span class="price">£13.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="fruitbottle.jpg" alt="" class="product-img">
+                <h2 class="product-title">Fruit Infused Water Bottle</h2>
+                <span class="price">£21.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+            <div class="product-box">
+                <img src="thermos.jpg" alt="" class="product-img">
+                <h2 class="product-title">Thermos Water Bottle</h2>
+                <span class="price">£21.99</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+            </div>
+        </div>
+    </section>
+    <!--Link to JS-->
+    <script src="main.js"></script>
+</body>
+</html>
